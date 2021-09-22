@@ -82,8 +82,8 @@ In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Do
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-        /c/Users/17163/Downloads/Docker.ps_command.PNG
+       
+![Docker ps_command](https://user-images.githubusercontent.com/83138086/134307916-1a7523ce-acc5-4934-a4e8-0c9f59501ff0.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:

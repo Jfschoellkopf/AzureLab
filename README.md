@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-        /c/Users/17163/AzureLab/Diagrams/The_Red_Team_Resource-Group.jpg
+![Red_Team_resource_Diagram](https://user-images.githubusercontent.com/83138086/134306154-aebfa6bd-3b78-42b6-ae7c-b41c85ee7157.PNG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YALM files may be used to install only certain pieces of it, such as Filebeat.
 

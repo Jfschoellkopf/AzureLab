@@ -29,13 +29,8 @@ What aspect of security do load balancers protect?
 What is the advantage of a jump box?
         Jump boxes provide secure connection to the server
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-        What does Filebeat watch for?
-        Filebeat watches for changes by collecting and logging files and events; forwarding them to Kibana for analysis.
-        What does Metricbeat record?
-        Metricbeat is installed on a host to monitor and record performance metrics.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs. Filebeat watches for changes by collecting and logging files and events; forwarding them to Kibana for analysis. Metricbeat is installed on a host to monitor and record performance metrics.
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name          | Function    | IP Address  | Operating System |
 |---------------|-------------|-------------|------------------|
@@ -53,8 +48,7 @@ Only the ELK Server machine can accept connections from the Internet. Access to 
 Workstation 13.89.51.194 through TCP on port 5601.
 
 Machines within the network can only be accessed by workstation and the jumpbox.
-- Which machine did you allow to access your ELK VM? What was its IP address?
-  I used Jump-Box-Provisioner IP 20.102.84.195 SSH port 22 to access my ELK VM and its IP address is 13.89.51.194
+I used Jump-Box-Provisioner IP 20.102.84.195 SSH port 22 to access my ELK VM and its IP address is 13.89.51.194
 
 A summary of the access policies in place can be found in the table below.
 
@@ -68,9 +62,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- What is the main advantage of automating configuration with Ansible?
-  Ansible will quickly make changes to the system, rather than doing each one manually.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because Ansible will quickly make changes to the system, rather than doing each one manually.
 
 The playbook implements the following tasks:
 In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
@@ -87,7 +79,6 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- List the IP addresses of the machines the Elk_Server is configured to monitor:
         Web1-DVWA: 10.0.0.5
         Web2-DVWA: 10.0.0.6
 We have installed the following Beats on these machines:
@@ -95,26 +86,16 @@ We have installed the following Beats on these machines:
         MetricBeats
 
 These Beats allow us to collect the following information from each machine:
-- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
-
-        FileBeats are used as a lightweight shipper for forwarding and centralizing log data. The data FileBeat collects is about changes in the filesystem. An example of a FileBeat are Apache Access Logs that can be used for monitoring traffic to your service.
-        MetricBeats collect machine metrics, such as uptime. They are installed on different servers in my environment and are used for monitoring performance.
+FileBeats are used as a lightweight shipper for forwarding and centralizing log data. The data FileBeat collects is about changes in the filesystem. An example of a FileBeat are Apache Access Logs that can be used for monitoring traffic to your service.
+MetricBeats collect machine metrics, such as uptime. They are installed on different servers in my environment and are used for monitoring performance.
 
 ### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-
-SSH into the control node and follow the steps below:
-- Copy the filebeat-config.yml and filebeat-playbook.yml file to the /etc/Ansible/ directory.
-- Update the hosts file to include the host IP address in filebeat-config.yml file.
-- Run the playbook, and navigate to Kibana to check that the installation worked as expected.
-
-Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?
+- This following file is the playbook and this is where it is copied to:
         elk.yml and it is located inside /etc/ansible/elk.yml
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-        I would update my hosts file in /etc/ansible/hosts  and I would be able to specify which machine to install the ELK server and Filebeat on by running nano hosts, and adding the installer-python or filebeat under [webervers] or [elk].
-- _Which URL do you navigate to in order to check that the ELK server is running?
-        I would navigate to my Kibana URL: http://13.89.51.194:5601/app/kibana
+- The file that I would update to make Ansible run the playbook on a specific machine and the specific machine to install the ELK server on versus which to install Filebeat on is:
+        I would update my hosts file in /etc/ansible/hosts and I would be able to specify which machine to install the ELK server and Filebeat on by running nano hosts, and adding the installer-python or filebeat under [webervers] or [elk].
+- The URL to navigate to in order to check that the ELK server is running is:
+        My Kibana URL: http://13.89.51.194:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+The specific commands the user will need to run to download the playbook, update the files, etc.
 cd /etc/ansible curl -i href="https://github.com/Jfschoellkopf/AzureLab.git" ansible-playbook /etc/ansible/elk.yml

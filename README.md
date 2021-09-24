@@ -97,5 +97,5 @@ MetricBeats collect machine metrics, such as uptime. They are installed on diffe
 - The URL to navigate to in order to check that the ELK server is running is:
         My Kibana URL: http://13.89.51.194:5601/app/kibana
 
-The specific commands the user will need to run to download the playbook, update the files, etc.
+The specific command to run to download the playbook, update the files, etc.
 cd /etc/ansible curl -i href="https://github.com/Jfschoellkopf/AzureLab.git" ansible-playbook /etc/ansible/elk.yml

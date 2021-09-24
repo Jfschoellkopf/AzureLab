@@ -98,4 +98,5 @@ MetricBeats collect machine metrics, such as uptime. They are installed on diffe
         My Kibana URL: http://13.89.51.194:5601/app/kibana
 
 The specific command to run to download the playbook, update the files, etc.
+
 cd /etc/ansible curl -i href="https://github.com/Jfschoellkopf/AzureLab.git" ansible-playbook /etc/ansible/elk.yml
